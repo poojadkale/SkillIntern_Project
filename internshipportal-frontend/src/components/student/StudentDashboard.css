@@ -1,0 +1,489 @@
+/* StudentDashboard.css - Navy Blue & White Theme */
+
+.dashboard-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eef2f8;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.02);
+}
+
+.header-content h1 {
+  font-size: 1.8rem;
+  color: #0a2540;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.header-content h1 .highlight-name {
+  color: #1e5a8a;
+  position: relative;
+  display: inline-block;
+}
+
+.header-content p {
+  color: #5a6e85;
+  font-size: 0.9rem;
+}
+
+.header-stats .success-rate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #eef2ff;
+  border-radius: 40px;
+  color: #1e5a8a;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Stats Row - Equal Cards */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #eef2f8;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 90, 138, 0.08);
+  border-color: #cbdff2;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.total-icon {
+  background: linear-gradient(135deg, #0a2540, #1e5a8a);
+}
+
+.pending-icon {
+  background: #f59e0b;
+}
+
+.accepted-icon {
+  background: #10b981;
+}
+
+.rejected-icon {
+  background: #ef4444;
+}
+
+.stat-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-info h3 {
+  font-size: 0.7rem;
+  color: #5a6e85;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Two Column Layout */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+}
+
+/* Profile Card */
+.profile-card, .applications-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid #eef2f8;
+  transition: all 0.2s ease;
+}
+
+.profile-card:hover, .applications-card:hover {
+  box-shadow: 0 8px 20px rgba(30, 90, 138, 0.05);
+  border-color: #cbdff2;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.card-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a2540;
+  margin: 0;
+}
+
+.section-icon {
+  color: #1e5a8a;
+  font-size: 1rem;
+}
+
+.edit-btn, .view-all-link {
+  background: none;
+  border: none;
+  color: #1e5a8a;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.edit-btn:hover, .view-all-link:hover {
+  color: #0a2540;
+  background: #f5f8fe;
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: baseline;
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+}
+
+.info-label {
+  width: 65px;
+  font-weight: 600;
+  color: #2c4e6e;
+  flex-shrink: 0;
+}
+
+.info-value {
+  flex: 1;
+  color: #0a2540;
+  font-weight: 500;
+}
+
+.skills-section {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.skills-section .info-label {
+  margin-bottom: 0.5rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.skill-tag {
+  background: #eef2ff;
+  color: #1e5a8a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #5a6e85;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  color: #cbd5e1;
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #0a2540;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1e5a8a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(30, 90, 138, 0.2);
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #1e5a8a;
+  color: #1e5a8a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: #1e5a8a;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Applications List */
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.app-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #eef2f8;
+  border-radius: 12px;
+  transition: all 0.2s;
+  background: white;
+}
+
+.app-item:hover {
+  border-color: #cbdff2;
+  background: #fafcff;
+  transform: translateX(4px);
+}
+
+.app-info h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 0.2rem;
+}
+
+.app-info p {
+  font-size: 0.75rem;
+  color: #1e5a8a;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.app-date {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status-badge.accepted {
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.status-badge.rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.view-all-btn {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #1e5a8a;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  width: 100%;
+  font-size: 0.75rem;
+  border-radius: 8px;
+}
+
+.view-all-btn:hover {
+  color: #0a2540;
+  background: #f5f8fe;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #eef2f8;
+  border-top-color: #1e5a8a;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin: 3rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.3rem;
+  }
+  
+  .app-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .status-badge {
+    align-self: flex-start;
+  }
+  
+  .profile-card, .applications-card {
+    padding: 1.25rem;
+  }
+  
+  .header-content h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .info-label {
+    width: auto;
+  }
+  
+  .skills-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

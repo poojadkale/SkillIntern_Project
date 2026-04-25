@@ -1,0 +1,266 @@
+/* AdminNavbar.css - Navy Blue Theme */
+
+.admin-navbar {
+  background: white;
+  padding: 0.875rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(10, 37, 64, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu-toggle {
+  background: #0a2540;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: #1e5a8a;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(30, 90, 138, 0.2);
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #0a2540;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.navbar-title span:first-child {
+  color: #0a2540;
+}
+
+.navbar-title span:last-child {
+  color: #1e5a8a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.admin-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.admin-name {
+  font-weight: 600;
+  color: #0a2540;
+  font-size: 0.875rem;
+}
+
+.admin-email {
+  font-size: 0.75rem;
+  color: #5a6e85;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #0a2540 0%, #1e5a8a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(30, 90, 138, 0.2);
+}
+
+.dropdown-icon {
+  margin-left: 4px;
+  font-size: 0.8rem;
+  color: #5a6e85;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(10, 37, 64, 0.1);
+  min-width: 200px;
+  z-index: 1001;
+  animation: fadeInDown 0.2s ease-out;
+  border: 1px solid #eef2f8;
+  overflow: hidden;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: #2c4e6e;
+  font-size: 0.875rem;
+  text-decoration: none;
+  background: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: #f5f8fe;
+  color: #1e5a8a;
+}
+
+.dropdown-item.logout {
+  color: #ef4444;
+}
+
+.dropdown-item.logout:hover {
+  background: #fef5f5;
+  color: #dc2626;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #eef2f8;
+  margin: 0.5rem 0;
+}
+
+/* Notification Icon */
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #5a6e85;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon:hover {
+  background: #f5f8fe;
+  color: #1e5a8a;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 10px;
+  transform: translate(25%, -25%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+  
+  .admin-details {
+    display: none;
+  }
+  
+  .menu-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .admin-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+  
+  .notification-icon {
+    padding: 0.35rem;
+  }
+  
+  .dropdown-menu {
+    min-width: 180px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-navbar {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .navbar-title {
+    font-size: 1rem;
+  }
+  
+  .navbar-left {
+    gap: 0.8rem;
+  }
+  
+  .menu-toggle {
+    width: 30px;
+    height: 30px;
+  }
+}

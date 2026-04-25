@@ -1,0 +1,123 @@
+/* src/components/common/CompanyCard.css */
+.company-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.company-logo-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: transform 0.3s ease;
+}
+
+.company-card:hover .company-logo-placeholder {
+  transform: scale(1.05);
+}
+
+.company-initials {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.company-industry {
+  font-size: 0.85rem;
+  color: #a855f7;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.company-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 0.75rem;
+}
+
+.location-icon,
+.briefcase-icon {
+  font-size: 0.8rem;
+  color: #a855f7;
+}
+
+.company-openings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0.75rem auto;
+  padding: 0.35rem 1rem;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 20px;
+}
+
+.btn-view {
+  width: 100%;
+  padding: 0.6rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.btn-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-card {
+    padding: 1rem;
+  }
+  
+  .company-logo-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .company-initials {
+    font-size: 1.4rem;
+  }
+  
+  .company-name {
+    font-size: 1rem;
+  }
+}

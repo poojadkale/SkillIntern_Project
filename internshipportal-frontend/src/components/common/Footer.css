@@ -1,0 +1,51 @@
+/* SimpleFooter.css - One Line Only */
+
+.simple-footer {
+  background: #0a2540;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.simple-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  text-align: center;
+}
+
+.simple-footer-container p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.footer-heart {
+  color: #ff6b6b;
+  font-size: 0.7rem;
+  display: inline-block;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .simple-footer-container {
+    padding: 0.6rem 1rem;
+  }
+  
+  .simple-footer-container p {
+    font-size: 0.6rem;
+  }
+}

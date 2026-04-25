@@ -1,0 +1,255 @@
+/* AdminSidebar.css - Navy Blue Theme */
+
+.admin-sidebar {
+  background: white;
+  width: 280px;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.02);
+  border-right: 1px solid #eef2f8;
+}
+
+.admin-sidebar.closed {
+  width: 80px;
+}
+
+/* Sidebar Header with Bell */
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eef2f8;
+  margin-bottom: 1rem;
+}
+
+.sidebar-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0a2540;
+  letter-spacing: -0.3px;
+  flex: 1;
+}
+
+.admin-sidebar.closed .sidebar-header h2 {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Notification Bell in Header */
+.sidebar-header-bell {
+  display: flex;
+  align-items: center;
+}
+
+.admin-sidebar.closed .sidebar-header-bell {
+  display: none;
+}
+
+/* Notification Bell Button in Header */
+.sidebar-header .notification-container {
+  position: relative;
+}
+
+.sidebar-header .notification-bell {
+  background: transparent;
+  border: none;
+  color: #1e5a8a;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar-header .notification-bell:hover {
+  background: #eef2ff;
+  color: #0a2540;
+}
+
+.sidebar-header .notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.55rem;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+/* Dropdown positioning for sidebar header */
+.sidebar-header .notification-dropdown {
+  position: fixed;
+  left: 260px;
+  top: 80px;
+  z-index: 1050;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.5rem;
+  color: #5a6e85;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  gap: 1rem;
+  position: relative;
+  margin: 0.25rem 0;
+  cursor: pointer;
+}
+
+.sidebar-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #1e5a8a;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #f5f8fe;
+  color: #1e5a8a;
+}
+
+.sidebar-link.active {
+  background: #f0f4f8;
+  color: #0a2540;
+}
+
+.sidebar-link.active::before {
+  transform: scaleY(1);
+}
+
+.sidebar-icon {
+  font-size: 1.25rem;
+  min-width: 24px;
+  color: inherit;
+}
+
+.sidebar-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Scrollbar */
+.admin-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #1e5a8a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 80px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-sidebar.open {
+    transform: translateX(0);
+    width: 280px;
+  }
+  
+  .sidebar-label {
+    display: none;
+  }
+  
+  .admin-sidebar.open .sidebar-label {
+    display: inline;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 0.75rem;
+  }
+  
+  .admin-sidebar.open .sidebar-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .sidebar-header-bell {
+    display: none;
+  }
+  
+  .admin-sidebar.open .sidebar-header-bell {
+    display: flex;
+  }
+  
+  .sidebar-link {
+    padding: 0.75rem 1rem;
+  }
+  
+  .admin-sidebar.open .sidebar-link {
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .sidebar-header .notification-dropdown {
+    left: 80px;
+  }
+  
+  .admin-sidebar.open .sidebar-header .notification-dropdown {
+    left: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    padding: 1rem;
+  }
+  
+  .sidebar-link {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .admin-sidebar.open .sidebar-link {
+    padding: 0.75rem 1rem;
+  }
+  
+  .sidebar-icon {
+    font-size: 1rem;
+  }
+}

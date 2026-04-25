@@ -1,0 +1,273 @@
+/* NotificationPage.css */
+.notification-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+  background: #f8fafc;
+}
+
+.notification-page-header {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1e5a8a;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  gap: 0.75rem;
+}
+
+.notification-page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 0.5rem;
+}
+
+.notification-page-header p {
+  color: #6b7280;
+}
+
+.notification-page-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #eef2f8;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin: 0;
+}
+
+.stat-info p {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.notification-page-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: #0a2540;
+  color: white;
+  border-color: #0a2540;
+}
+
+.mark-all-read-btn {
+  background: none;
+  border: none;
+  color: #1e5a8a;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+.mark-all-read-btn:hover {
+  background: #eef2ff;
+}
+
+.notification-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notification-page-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #eef2f8;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.notification-page-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.notification-page-item.unread {
+  background: #f0f9ff;
+  border-left: 3px solid #1e5a8a;
+}
+
+.notification-page-icon {
+  flex-shrink: 0;
+}
+
+.notif-icon {
+  font-size: 1.3rem;
+}
+
+.notif-icon.contact {
+  color: #f59e0b;
+}
+
+.notif-icon.application {
+  color: #10b981;
+}
+
+.notif-icon.internship {
+  color: #3b82f6;
+}
+
+.notif-icon.profile {
+  color: #8b5cf6;
+}
+
+.notif-icon.default {
+  color: #6b7280;
+}
+
+.notification-page-content {
+  flex: 1;
+}
+
+.notification-page-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 0.25rem;
+}
+
+.notification-page-message {
+  font-size: 0.8rem;
+  color: #5a6e85;
+  line-height: 1.4;
+}
+
+.notification-page-time {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+.notification-page-dot {
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.no-notifications {
+  text-align: center;
+  padding: 4rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #eef2f8;
+}
+
+.no-notif-icon {
+  font-size: 3rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.no-notifications h3 {
+  font-size: 1.2rem;
+  color: #0a2540;
+  margin-bottom: 0.5rem;
+}
+
+.no-notifications p {
+  color: #6b7280;
+}
+
+.notification-page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #1e5a8a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .notification-page {
+    padding: 1rem;
+  }
+  
+  .notification-page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .notification-page-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+}

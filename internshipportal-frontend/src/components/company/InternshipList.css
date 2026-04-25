@@ -1,0 +1,448 @@
+/* InternshipList.css - Complete Working Version */
+
+.internship-container {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.internship-card {
+  background: white;
+  border: 1px solid #e9eef2;
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.internship-card:hover {
+  border-color: #1e5a8a;
+  box-shadow: 0 8px 20px rgba(30, 90, 138, 0.1);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3a4a;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.status-open {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-closed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Company Info */
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5f6b7a;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.company-icon {
+  color: #1e5a8a;
+  font-size: 0.9rem;
+}
+
+/* Action Buttons Row */
+.action-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Edit Button - Navy Blue */
+.edit-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  color: #1e5a8a;
+  border: 1px solid #cbdff2;
+  font-size: 0.8rem;
+}
+
+.edit-btn:hover {
+  background-color: #1e5a8a;
+  color: white;
+  border-color: #1e5a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 90, 138, 0.2);
+}
+
+/* Delete Button - Red */
+.delete-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* Details Section */
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.detail-icon {
+  color: #1e5a8a;
+  font-size: 0.9rem;
+  min-width: 1.2rem;
+}
+
+.detail-item strong {
+  color: #2d3a4a;
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+/* Date Section */
+.date-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.date-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.date-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3a4a;
+  flex-wrap: wrap;
+}
+
+.date-icon {
+  color: #1e5a8a;
+  font-size: 0.9rem;
+}
+
+/* Deadline Badge */
+.deadline-badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 30px;
+  background: #f59e0b;
+  color: white;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.deadline-badge.passed {
+  background: #ef4444;
+}
+
+/* Toggle Details Button */
+.toggle-details-btn {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.25rem 0 0 0;
+  background: #f8fafc;
+  border: 1px solid #e9eef2;
+  border-radius: 8px;
+  color: #5f6b7a;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.2s;
+}
+
+.toggle-details-btn:hover {
+  background: #f0f4fa;
+  color: #1e5a8a;
+  border-color: #1e5a8a;
+}
+
+/* Expanded Details */
+.expanded-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #e9eef2;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Meta Section */
+.meta-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #475569;
+  flex: 1;
+}
+
+.meta-icon {
+  color: #1e5a8a;
+  font-size: 0.9rem;
+}
+
+.meta-item strong {
+  color: #2d3a4a;
+  font-weight: 600;
+  margin-right: 0.2rem;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d3a4a;
+  margin: 0 0 0.4rem 0;
+}
+
+/* Description Section */
+.description-section {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.description-text {
+  color: #475569;
+  line-height: 1.5;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  background: #f0ecf5;
+  color: #475569;
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid #e9eef2;
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  background: #1e5a8a;
+  color: white;
+  border-color: #1e5a8a;
+}
+
+/* Additional Info */
+.additional-info {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.info-label {
+  color: #94a3b8;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.info-value.small-date {
+  color: #64748b;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internship-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-badge {
+    align-self: flex-start;
+  }
+
+  .action-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .edit-btn, .delete-btn {
+    width: 100%;
+  }
+
+  .meta-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .date-value {
+    flex-wrap: wrap;
+  }
+
+  .deadline-badge {
+    margin-left: 0;
+  }
+  
+  .additional-info {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .card-header {
+    flex-wrap: wrap;
+  }
+  
+  .card-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    flex: 0 0 100%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .status-badge {
+    margin-left: 0;
+  }
+}

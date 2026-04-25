@@ -1,0 +1,294 @@
+/* RegisterCompany.css - Navy Blue & White Theme */
+
+:root {
+  --navy-dark: #0a2540;
+  --navy-medium: #1e5a8a;
+  --navy-light: #2c6e9e;
+  --text-primary: #0a2540;
+  --text-secondary: #2c4e6e;
+  --text-muted: #5a6e85;
+  --border-light: #eef2f8;
+  --bg-gray: #fafcff;
+  --border-radius: 16px;
+  --box-shadow: 0 20px 40px rgba(10, 37, 64, 0.08);
+  --transition: all 0.3s ease;
+}
+
+.register-company {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.register-company-card {
+  background: white;
+  border-radius: 28px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: var(--box-shadow);
+  animation: fadeInUp 0.5s ease-out;
+  border: 1px solid var(--border-light);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--navy-medium);
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: var(--bg-gray);
+  color: var(--navy-dark);
+}
+
+.register-company-title {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-gray);
+  border-radius: 20px;
+  transition: var(--transition);
+  border: 1px solid var(--border-light);
+}
+
+.form-section:hover {
+  box-shadow: 0 5px 15px rgba(30, 90, 138, 0.05);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--navy-medium);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--navy-medium);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  font-family: inherit;
+  background: white;
+  color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--navy-medium);
+  box-shadow: 0 0 0 3px rgba(30, 90, 138, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #cbd5e1;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 500;
+}
+
+.register-btn {
+  width: 100%;
+  background: var(--navy-dark);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.register-btn:hover:not(:disabled) {
+  background: var(--navy-medium);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 90, 138, 0.25);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.terms-text {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-company {
+    padding: 1rem;
+  }
+  
+  .register-company-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  
+  .form-section {
+    padding: 1rem;
+  }
+  
+  .register-company-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-company-card {
+    padding: 1.25rem;
+  }
+  
+  .register-company-title {
+    font-size: 1.3rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .register-btn {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+/* Password Field Styles */
+.password-field {
+  position: relative;
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.password-toggle-btn:hover {
+  color: #1e5a8a;
+}

@@ -1,0 +1,957 @@
+/* InternshipsManagement.css - Clean Navy Blue Theme with Proper Table Layout */
+
+.internships-management {
+  animation: fadeIn 0.5s ease-out;
+  padding: 0.25rem;
+}
+
+/* Header Section */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a2540;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.page-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #1e5a8a;
+  border-radius: 2px;
+}
+
+.header-stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stat-chip {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  border: 1px solid #eef2f8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #0a2540;
+}
+
+.stat-chip span {
+  font-weight: 700;
+  color: #1e5a8a;
+  font-size: 1rem;
+}
+
+.stat-chip.open span {
+  color: #10b981;
+}
+
+.stat-chip.closed span {
+  color: #ef4444;
+}
+
+/* Search and Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  background: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid #eef2f8;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.02);
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  background: white;
+  color: #0a2540;
+  transition: all 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #1e5a8a;
+  box-shadow: 0 0 0 3px rgba(30, 90, 138, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5a6e85;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: #1e5a8a;
+  color: #1e5a8a;
+  background: #f5f8fe;
+}
+
+.filter-btn.active {
+  background: #0a2540;
+  color: white;
+  border-color: #0a2540;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.15);
+}
+
+/* Bulk Delete Button */
+.bulk-delete-btn {
+  padding: 0.4rem 1rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.bulk-delete-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
+}
+
+/* Export Button */
+.export-btn {
+  padding: 0.4rem 1rem;
+  background: #0a2540;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.export-btn:hover {
+  background: #1e5a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(30, 90, 138, 0.2);
+}
+
+/* Table Container - Improved */
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eef2f8;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.02);
+  margin-bottom: 1rem;
+}
+
+/* Improved Table Layout */
+.internships-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.internships-table thead {
+  background: #fafcff;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.internships-table th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c4e6e;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #eef2f8;
+  white-space: nowrap;
+}
+
+.internships-table td {
+  padding: 0.9rem 0.75rem;
+  border-bottom: 1px solid #eef2f8;
+  color: #0a2540;
+  vertical-align: middle;
+}
+
+.internships-table tr:hover {
+  background: #fafcff;
+}
+
+/* Checkbox Cell */
+.checkbox-cell {
+  width: 30px;
+  text-align: center;
+  padding: 0.9rem 0.5rem;
+}
+
+.checkbox-cell input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #1e5a8a;
+}
+
+/* ID Cell */
+.id-cell {
+  font-family: monospace;
+  color: #5a6e85;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 60px;
+}
+
+/* Title Cell */
+.title-cell {
+  font-weight: 600;
+  color: #0a2540;
+  min-width: 180px;
+}
+
+/* Company Cell */
+.company-cell {
+  color: #1e5a8a;
+  font-weight: 500;
+  min-width: 140px;
+}
+
+/* Location Cell */
+.location-cell {
+  min-width: 100px;
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #f5f8fe;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #1e5a8a;
+  white-space: nowrap;
+}
+
+.location-icon {
+  font-size: 0.7rem;
+}
+
+/* Duration Cell */
+.duration-cell {
+  min-width: 100px;
+}
+
+.duration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #f5f8fe;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #1e5a8a;
+  white-space: nowrap;
+}
+
+.duration-icon {
+  font-size: 0.7rem;
+}
+
+/* Stipend Cell */
+.stipend-cell {
+  min-width: 100px;
+  color: #10b981;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.stipend-icon {
+  font-size: 0.85rem;
+  color: #10b981;
+  margin-right: 0.2rem;
+}
+
+/* Openings Cell */
+.openings-cell {
+  min-width: 80px;
+  color: #3b82f6;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.openings-icon {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  margin-right: 0.2rem;
+}
+
+/* Date Cell */
+.date-cell {
+  min-width: 100px;
+  font-size: 0.8rem;
+  color: #5a6e85;
+  white-space: nowrap;
+}
+
+.date-icon {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-right: 0.3rem;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.status-open {
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.status-closed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Action Buttons */
+.actions-cell {
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.action-btn {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.2s;
+  border: 1px solid #e2e8f0;
+  background: white;
+  margin: 0 0.2rem;
+}
+
+.view-btn {
+  color: #1e5a8a;
+}
+
+.view-btn:hover {
+  background: #1e5a8a;
+  color: white;
+  transform: translateY(-2px);
+  border-color: #1e5a8a;
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  border-color: #ef4444;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eef2f8;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.2rem;
+  color: #0a2540;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #5a6e85;
+  margin-bottom: 1.5rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eef2f8;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5a6e85;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #0a2540;
+  color: white;
+  border-color: #0a2540;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page-number {
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5a6e85;
+  transition: all 0.2s;
+}
+
+.page-number:hover {
+  background: #f5f8fe;
+  border-color: #1e5a8a;
+}
+
+.page-number.active {
+  background: #0a2540;
+  color: white;
+  border-color: #0a2540;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #eef2f8;
+  border-top-color: #1e5a8a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  max-width: 750px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #eef2f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafcff;
+  border-radius: 24px 24px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.2s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.modal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.modal-section h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e5a8a;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.modal-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.modal-info-label {
+  font-size: 0.7rem;
+  color: #5a6e85;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.modal-info-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0a2540;
+}
+
+.modal-info-value.link {
+  color: #1e5a8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.modal-info-value.link:hover {
+  text-decoration: underline;
+}
+
+.work-type-badge {
+  background: #eef2ff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #1e5a8a;
+}
+
+.modal-description {
+  color: #2c4e6e;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.modal-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modal-skill-tag {
+  background: #eef2ff;
+  color: #1e5a8a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.modal-status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.modal-status-badge.status-open {
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.modal-status-badge.status-closed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eef2f8;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  background: #fafcff;
+  border-radius: 0 0 24px 24px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal-close-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #5a6e85;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    width: 100%;
+  }
+  
+  .filter-group {
+    justify-content: center;
+  }
+  
+  .bulk-delete-btn,
+  .export-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pagination {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filter-group {
+    justify-content: center;
+  }
+  
+  .actions-cell {
+    white-space: nowrap;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-numbers {
+    order: -1;
+  }
+  
+  .modal-content {
+    width: 95%;
+    max-width: 95%;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .stat-chip {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .filter-btn {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.7rem;
+  }
+  
+  .internships-table th,
+  .internships-table td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .action-btn {
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .modal-section h4 {
+    font-size: 0.8rem;
+  }
+  
+  .modal-info-value {
+    font-size: 0.8rem;
+  }
+}
+/* Improved Modal Close Button - Add/Update these styles */
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.25s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  transform: rotate(90deg) scale(1.05);
+}
+
+.modal-footer-close-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #5a6e85;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.modal-footer-close-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.loading-company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.loading-company .small-spinner {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #eef2f8;
+  border-top-color: #1e5a8a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.info-icon {
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-close-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .modal-footer-close-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
